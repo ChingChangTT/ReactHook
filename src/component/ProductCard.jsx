@@ -1,6 +1,7 @@
 import { Card } from "flowbite-react";
 
 export default function ProductCard({ image, title, price }) {
+  
   return (
     <Card className="max-w-sm" imgAlt={title} imgSrc={image}>
       <a href="#">

@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Buttondisplay } from './component/Buttondisplay'
 import ProductCard from './component/ProductCard'
+import NavbarComponent from './component/NavbarComponent'
 function App() {
   const [count, setCount] = useState(0);
   const [change, setChange] = useState(0);
@@ -57,29 +58,31 @@ function App() {
   console.log("products", products);
   return (
     <>
-      <div className="m-auto w-96 flex items-center justify-between">
+      <div className="mt-14 m-auto w-96 flex items-center justify-between">
         <h1 className="read-the-docs text-3xl text-pink-600">
           {count}
         </h1>
         <Buttondisplay handle={() => handle()} tittle={"I Love you"} style={"px-5 text-center text-3xl bg-pink-400  text-black border-2 border-fuchsia-500 "} />
       </div>
-      <section className="flex m-auto mt-14 w-96 justify-between">
+      <section className=" ">
         <form action="#" className="flex w-96 justify-between">
           <label htmlFor="Password">Enter Password :</label>
-          <input type="password" placeholder="Input your password" className="border w-1/2" onChange={handlePass} />
-          <p className="text-red-700">{error.message}</p>
+          <input type="password" placeholder="Input your password" className="block border " onChange={handlePass} />
+         <div><p className="text-red-700">{error.message}</p></div> 
         </form>
       </section>
-      <main className="flex justify-center items-center flex-col  w-4/5 m-auto">
+      <main className=" "> 
+      {/* flex flex-wrap gap-5 justify-center items-center flex-col  */}
       <section>
-        <h1>This is Product section!!</h1>
-        <div className="grid grid-cols-4 gap-5">
+        <h1 className="font-bold text-4xl text-center">This is Product section!!</h1>
+        <div className="w-full grid  grid-cols-4 gap-x-5 mt-5">
+        {/* grid grid-cols-4 gap-5 mt-5 */}
           {products.map((product, index) => {
             return (
               <ProductCard
                 key={index}
                 title={product.title}
-                image={product.images && product.images.length > 0 ? product.images[0] : "https://i.pinimg.com/564x/7a/aa/a5/7aaaa545e00e8a434850e80b8910dd94.jpg"}
+                image={product.images && product.images.length > 0 ? product.images[0] : "https://i.pinimg.com/736x/8f/e4/18/8fe41808e1d9199dc4283de93e8bb36b.jpg"}
                 price={product.price}
               />
             );
