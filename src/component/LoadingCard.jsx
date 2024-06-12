@@ -1,25 +1,26 @@
-import { Card } from "flowbite-react";
+import React from 'react'
 
-const LoadingCard = () => (
-  <Card className="max-w-sm animate-pulse" imgAlt="Loading" imgSrc="https://via.placeholder.com/150">
-    <a href="#">
-      <div className="h-5 bg-gray-200 rounded w-3/4"></div>
-    </a>
-    <div className="mb-5 mt-2.5 flex items-center space-x-2">
-      <div className="h-5 w-5 bg-gray-200 rounded"></div>
-      <div className="h-5 w-5 bg-gray-200 rounded"></div>
-      <div className="h-5 w-5 bg-gray-200 rounded"></div>
-      <div className="h-5 w-5 bg-gray-200 rounded"></div>
-      <div className="h-5 w-5 bg-gray-200 rounded"></div>
-      <span className="ml-3 mr-2 rounded bg-gray-200 px-2.5 py-0.5 text-xs font-semibold">
-        ...
-      </span>
-    </div>
-    <div className="flex items-center justify-between">
-      <div className="h-8 w-16 bg-gray-200 rounded"></div>
-      <div className="h-10 w-24 bg-gray-200 rounded"></div>
-    </div>
-  </Card>
-);
+export default function LoadingCard() {
+  return (
+    <div>
+        <Card className="max-w-sm" imgAlt={title} imgSrc={image}>
+        <div className="flex flex-col items-center justify-center h-full">
+    {/* Loading Indicator */}
+    <svg
+      className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-500"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0116 0H4z"></path>
+    </svg>
 
-export default LoadingCard;
+    {/* Optional: Text indicating the loading state */}
+    <p className="text-gray-500">Loading...</p>
+  </div>
+</Card>
+
+    </div>
+  )
+}
